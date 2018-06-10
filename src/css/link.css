@@ -1,0 +1,13 @@
+.link {
+  color: black;
+  opacity: 0.6;
+  background: white;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  padding: 7px 15px;
+  border-radius: 34px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}

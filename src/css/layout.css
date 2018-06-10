@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Rajdhani:600|Source+Sans+Pro:400,600,700');
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.icon {
+  color: purple;
+  margin: 0 3px;
+}
+.icon.white {
+  color: white;
+}

@@ -1,0 +1,21 @@
+.tags {
+  display: flex;
+  margin-right: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0 4px 0 0;
+}
+
+.tag {
+  color: white;
+  background: purple;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 3px;
+  border-radius: 35px;
+  padding: 5px 12px;
+  line-height: 12px;
+  font-family: 'Rajdhani', cursive;
+  text-decoration: none;
+}
