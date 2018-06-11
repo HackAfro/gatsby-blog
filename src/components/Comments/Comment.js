@@ -3,10 +3,10 @@ import React from 'react';
 const Comment = ({ comment }) => (
   <div className="comment">
     <div className="comment__meta">
-      <h5>Richard Afro</h5>
-      <span>June 21, 2018</span>
+      <h5>{comment.name}</h5>
+      <span>{new Date(comment.timestamp).toDateString()}</span>
     </div>
-    <p className="comment__body">I really enjoyed this article</p>
+    <p className="comment__body">{comment.comment}</p>
   </div>
 );
 
