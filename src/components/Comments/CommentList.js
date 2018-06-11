@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './form';
 import Comment from './Comment';
+import Pusher from 'pusher-js';
 
 import '../../css/comment.css';
 
@@ -8,17 +9,38 @@ class Comments extends React.Component {
   constructor() {
     super();
     this.state = {
-      comment: {},
+      comments: [],
     };
+    this.pusher = new Pusher('PUSHER_KEY', {
+      cluster: 'eu',
+    });
+  }
+
+  componentDidMount() {
+    const channel = this.pusher.subscribe('post-comment');
+    channel.bind('new-comment', (data) => {
+      this.setState((prevState) => ({
+        comments: [...prevState.comments, data],
+      }));
+    });
   }
 
   render() {
+    const { comments } = this.state;
     return (
       <div>
         <Form />
         <hr />
         <div className="comment-list">
-          <Comment comment={this.state.comment} />
+          {comments.length ? (
+            comments.map((comment) => (
+              <Comment comment={comment} key={comment.id} />
+            ))
+          ) : (
+            <h5 className="no-comments-alert">
+              No comments on this post yet. Be the first
+            </h5>
+          )}
         </div>
       </div>
     );
