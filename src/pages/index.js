@@ -1,11 +1,10 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
-import Helmet from 'react-helmet';
 
 import Link from '../components/Link';
+import Tags from '../components/Tags';
 
 import '../css/index.css';
-import Tags from '../components/Tags';
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
