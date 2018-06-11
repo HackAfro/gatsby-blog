@@ -1,7 +1,8 @@
 import React from 'react';
-import Form from './form';
-import Comment from './Comment';
 import Pusher from 'pusher-js';
+
+import CommentForm from './form';
+import Comment from './Comment';
 
 import '../../css/comment.css';
 
@@ -29,7 +30,7 @@ class Comments extends React.Component {
     const { comments } = this.state;
     return (
       <div>
-        <Form />
+        <CommentForm />
         <hr />
         <div className="comment-list">
           {comments.length ? (
