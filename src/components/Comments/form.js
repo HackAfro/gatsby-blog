@@ -9,11 +9,12 @@ class Form extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   async handleSubmit(e) {
     e.preventDefault();
-    const body = JSON.stringify({ comment: this.state.comment });
+    const body = JSON.stringify({ ...this.state });
     const response = await fetch('http://localhost:4000/comment', {
       method: 'post',
       body,
@@ -22,13 +23,31 @@ class Form extends React.Component {
       },
     });
     const data = await response.json();
+    this.setState({ comment: '', name: '' });
+  }
+
+  handleChange({ target }) {
+    const { name, value } = target;
+    this.setState({ [name]: value });
   }
 
   render() {
+    const { name, comment } = this.state;
     return (
       <form onSubmit={this.handleSubmit} className="comment-form">
-        <input placeholder="Your Name" />
-        <textarea placeholder="Enter your comment" rows="4" />
+        <input
+          placeholder="Your Name"
+          value={name}
+          name="name"
+          onChange={this.handleChange}
+        />
+        <textarea
+          placeholder="Enter your comment"
+          rows="4"
+          name="comment"
+          value={comment}
+          onChange={this.handleChange}
+        />
         <div>
           <button className="button submit-button">Submit</button>
         </div>
