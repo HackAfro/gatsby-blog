@@ -1,23 +1,34 @@
-# gatsby-blog-starter-kit
+# Gatsby-Blog
+Realtime comments on gatsby blogs using Pusher
 
-[![Build Status](https://travis-ci.org/DSchau/gatsby-blog-starter-kit.svg?branch=master)](https://travis-ci.org/DSchau/gatsby-blog-starter-kit) [![Greenkeeper badge](https://badges.greenkeeper.io/DSchau/gatsby-blog-starter-kit.svg)](https://greenkeeper.io/)
+## Prerequisites
+- [Gatsby](https://gatsbyjs.org/)
+- [Express](https://expressjs.com/)
+- [Pusher](https://pusher.com)
+- A [Pusher account](https://pusher.com/signup) and [Pusher app credentials](http://dashboard.pusher.com/)
 
-Use this starter kit to jump start (or use as a reference) a great blog with [gatsby][gatsby]
 
-![Blog example](./assets/gatsby-blog-starter-kit.png)
+## Getting started
+- Clone the project and install dependencies:
+- Create a file named `.env`. Update the `.env` file with the content below:
 
-## Features
+```
+PUSHER_APP_ID=app-id
+PUSHER_APP_KEY=app-key
+PUSHER_APP_SECRET=app-secret
+```
 
-1. Blog post listing with previews for each blog post
-1. Navigation between posts with a previous/next post button
-1. Tags and tag navigation
-1. Responsive images via [gatsby-remark-images][gatsby-remark-images]
+> **Note**: ensure to replace the placeholder values with your pusher `appId`, `key` and `secret`.
 
-## Set up
+- Clone the repo
+- Enter the project folder
+- Run npm install 
+- Start server by running `node server`
+- Run `yarn develop` or `npm run develop` to start the gatsby server 
 
-1. Clone this repo
-1. `yarn`
-1. `yarn start`
 
-[gatsby]: https://www.gatsbyjs.org/
-[gatsby-remark-images]: https://www.gatsbyjs.org/packages/gatsby-remark-images/
+## Built With
+
+* [Gatsby](https://gatsbyjs.org/) 
+* [Pusher](https://pusher.com)
+* [Express](https://expressjs.com/)
