@@ -2,6 +2,8 @@
 
 Realtime comments on gatsby blogs using Pusher
 
+You can find the tutorial for this repo [here](https://pusher.com/tutorials/realtime-comments-gatsby-blog)
+
 ## Prerequisites
 
 - [Gatsby](https://gatsbyjs.org/)
